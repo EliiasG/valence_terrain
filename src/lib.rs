@@ -162,7 +162,7 @@ fn update_client_views(
         let mut old_view = old_view.get();
         if terrain_gen.render_dist != 0 {
             view = view.with_dist(view.dist().min(terrain_gen.render_dist));
-            old_view = old_view.with_dist(view.dist().min(terrain_gen.render_dist));
+            old_view = old_view.with_dist(old_view.dist().min(terrain_gen.render_dist));
         }
         let reload = terrain_gen.needs_reload;
         let queue_pos = |pos: ChunkPos| {

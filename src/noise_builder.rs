@@ -78,6 +78,7 @@ impl NoiseBuilder {
     /// There are no parenthsies, so an expression could be something like `add {expr} {expr}`
     /// Tokens are lowercase and named the same as their [NoiseBuilder] counterparts, except [Constant](NoiseBuilder::Constant) is just `c` and [ScaleInput](NoiseBuilder::ScaleInput) is `scalein`.  
     /// An example is given in 'terrain.yml', note that the formattig does not matter, as any whitspace causes a new token.  
+    /// When using an expression that takes 2 expressions with a constant, the constant should be supplied first
     pub fn parse(string: &str) -> Result<Self, String> {
         let mut tokens = string.split_whitespace();
         let res = Self::from_tokens(&mut tokens);

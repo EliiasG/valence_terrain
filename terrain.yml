@@ -1,0 +1,24 @@
+block: stone
+surface_layers:
+- - 2
+  - dirt
+- - 1
+  - grass_block
+noise: "
+scalein 0.01 0.01
+add c 20
+add
+   mul c 10
+   perlin 1
+add
+   mul c 10
+   simplex 2
+add
+   mul c 3 scalein
+   3 3
+   simplex 3
+scalein 3.5 3.5
+mul c 120 max c 0 add c -0.5
+powi 3 perlin 1
+"
+height: 384
